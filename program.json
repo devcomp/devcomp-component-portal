@@ -1,0 +1,33 @@
+{
+    "name": "org.devcomp.portal.ComponentTree",
+	"boot": {
+		"package": "./package.json",
+		"config": "org.devcomp.portal.ComponentTree/0"
+	},
+	"config": {
+		"org.devcomp.portal.ComponentTree/0": {
+			"$to": "boot",
+			"$depends": [
+				"app"
+			]
+		},
+		"github.com/pinf-it/pinf-it-bundler/0": {
+			"$to": "bundles",
+			"target": "browser",
+			"sourceHash": "{{$from.filetree.hash}}",
+			"sourcePath": "{{__DIRNAME__}}"
+		},
+		"github.com/pinf-it/pinf-it-filetree-insight/0": {
+			"$to": "filetree",
+			"path": "{{__DIRNAME__}}",
+			"watch": true
+		},		
+		"github.com/pinf-to/pinf-to-nwjs/0": {
+			"$to": "app",
+			"bundlesBasePath": "{{$from.bundles.bundlePath}}",
+			"config": {
+				"sourceHashFile": "{{$from.filetree.hashFile}}"
+			}
+		}
+	}
+}

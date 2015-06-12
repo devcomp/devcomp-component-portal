@@ -18,6 +18,13 @@ Usage
 *TODO*
 
 
+
+TODO
+====
+
+  * Use PINF.json to erect a dev environment around this lib so we can get rid of most of program.json.
+
+
 License
 =======
 

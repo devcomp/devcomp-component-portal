@@ -1,0 +1,14 @@
+{
+	"main": "./main.js",
+    "imports": {
+        "globals": {
+            "console": true,
+            "insight": true
+        }
+    },
+	"exports": {
+		"bundles": {
+			"main.js": "./main.js"
+		}
+	}
+}
