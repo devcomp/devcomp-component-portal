@@ -1,2 +1,6 @@
 /.rt/
 /program.rt.json
+/node_modules/
+/bower_components/
+/.components.built/
+/www/assets.js

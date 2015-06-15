@@ -10,5 +10,59 @@
 		"bundles": {
 			"main.js": "./main.js"
 		}
+	},
+	"dependencies": {
+	    "bower": "^1.4.1",
+	    "backbone": "^1.2.0",
+	    "backbone-jsonapi": "^0.1.6",
+	    "backbone-xhr-events": "^1.0.1",
+	    "page": "^1.6.3",
+		"react": "^0.13.3",
+	    "react-backbone": "^1.0.3",
+	    "underscore": "^1.8.3"
+	},
+	"scripts": {
+		"install": "bower install --allow-root"
+	},
+	"config": {
+	    "io.pinf.server.grunt/0": {
+	      "static": {
+	        "/assets/semantic-ui-css": "./node_modules/semantic-ui-css",
+	        "/": "./www"
+	      },
+	      "grunts": {
+	        "assets": {
+	          "ecosystems": {
+	            "bower": {
+	              "componentsPath": "./bower_components",
+	              "targetBasePath": "./www/assets"
+	            }
+	          }
+	        }
+	      }
+	    },
+	    "io.pinf.server.webpack/0": {
+	      "static": {
+	        "/assets/backbone-jsonapi": "./node_modules/backbone-jsonapi/dist"
+	      },
+	      "packs": {
+	        "components": {
+	          "ecosystems": [
+	            "react"
+	          ],
+	          "sourcePath": "./components",
+	          "targetPath": "./.components.built",
+	          "compilerConfig": [
+	            [
+	              "$..externals",
+	              {
+	                "$": "$",
+	                "jquery": "$"
+	              }
+	            ]
+	          ]
+	        }
+	      }
+	    }		
 	}
 }
